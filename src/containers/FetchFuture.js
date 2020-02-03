@@ -17,6 +17,10 @@ export default class FetchFuture extends Component {
       .then(result => this.setState({ quotes: result }));
   }
 
+  componentDidMount() {
+    this.fetch();
+  }
+
   render() {
     const { quotes } = this.state;
 
