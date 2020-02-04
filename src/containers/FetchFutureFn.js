@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../components/header/Header.js';
 import QuoteList from '../components/quoteList/QuoteList.js';
-import getQuotes from '../services/FuturamaApi.js';
+import useQuotes from '../hooks/useQuotes.js';
+
 
 export default function FetchFutureFn() {
-  const [quotes, setQuotes] = useState([]);
-
-  useEffect(() => {
-    getQuotes()
-      .then(res => setQuotes(res));
-  }, []);
+  const { quotes } = useQuotes();
 
   return (
     <>
