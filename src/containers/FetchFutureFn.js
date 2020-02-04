@@ -5,12 +5,12 @@ import useQuotes from '../hooks/useQuotes.js';
 
 
 export default function FetchFutureFn() {
-  const { quotes } = useQuotes();
+  const { quotes, fetchQuote } = useQuotes();
 
   return (
     <>
       <Header />
-      <QuoteList quotes={quotes} />
+      <QuoteList quotes={quotes} fetchQuote={fetchQuote} />
     </>
   );
 }
