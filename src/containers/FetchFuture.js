@@ -6,10 +6,7 @@ import getQuotes from '../services/FuturamaApi.js';
 export default class FetchFuture extends Component {
 
   state = {
-    quotes: [
-      { character: 'Ian', quote: 'Just to see this works' },
-      { character: 'Someone Else', quote: 'A second test' }
-    ]
+    quotes: []
   }
 
   fetch = () => {
