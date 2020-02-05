@@ -1,6 +1,5 @@
 const getQuotes = (num, character) => {
   let url;
-  console.log(num);
   if(character === 'none'){
     url = `https://futuramaapi.herokuapp.com/api/quotes/${num}`;
   } else {
