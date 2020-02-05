@@ -4,9 +4,10 @@ import getQuotes from '../services/FuturamaApi.js';
 export default function useQuotes() {
   const [quotes, setQuotes] = useState([]);
   const [num, setNum] = useState(1);
+  const [userCharacter, setUserCharacter] = useState('none');
   
   const fetchQuote = () => {
-    getQuotes(num)
+    getQuotes(num, userCharacter)
       .then(res => setQuotes(res));
   };
 
@@ -18,7 +19,11 @@ export default function useQuotes() {
     setNum(target.value);
   });
 
+  const selectCharacter = (({ target }) => {
+    setUserCharacter(target.value);
+  });
 
-  return { quotes, fetchQuote, handleChange };
+
+  return { quotes, fetchQuote, handleChange, selectCharacter };
 }
 
